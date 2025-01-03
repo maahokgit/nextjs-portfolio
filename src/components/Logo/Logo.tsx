@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Style from "./Logo.module.css";
+import Style from "./Logo.module.scss";
 
 const Logo = () => (
   <div className={Style.Home}>

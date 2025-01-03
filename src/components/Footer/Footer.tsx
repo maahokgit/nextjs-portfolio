@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopyright } from "@fortawesome/free-solid-svg-icons";
-import Style from "./Footer.module.css";
+import Style from "./Footer.module.scss";
 
 const Footer = async () => {
 

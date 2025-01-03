@@ -3,7 +3,7 @@ import { faLinkedinIn, faGithub } from "@fortawesome/free-brands-svg-icons";
 
 import NavigationItem from "./NavigationItem/NavigationItem";
 
-import Style from "./NavigationItems.module.css";
+import Style from "./NavigationItems.module.scss";
 
 const NavigationItems = () => (
   <ul className={Style.NavigationItems}>

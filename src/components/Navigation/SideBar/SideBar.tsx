@@ -1,8 +1,7 @@
 import Logo from "@/components/Logo/Logo";
 import NavigationItems from "../NavigationItems/NavigationItems";
 
-import Style from "./SideBar.module.css";
-
+import Style from "./SideBar.module.scss";
 interface ISideBarProps {
   open: boolean;
   closed: () => void;

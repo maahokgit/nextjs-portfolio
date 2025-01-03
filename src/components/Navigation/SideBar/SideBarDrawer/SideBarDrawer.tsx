@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBars } from "@fortawesome/free-solid-svg-icons";
-import Style from "./SideBarDrawer.module.css";
+import Style from "./SideBarDrawer.module.scss";
 
 interface ISideBarDrawerProps {
   clicked: () => void;

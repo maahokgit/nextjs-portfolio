@@ -18,19 +18,20 @@ a.Icon:active {
   border-bottom: none;
 }
 
-.FontAwesomeIcon li {
-  padding: 0 20px;
-  display: -webkit-flex;
-  display: flex;
-  height: 100%;
-  -webkit-align-items: center;
-  align-items: center;
-  -webkit-justify-content: center;
-  justify-content: center;
-}
-
-.FontAwesomeIcon li svg:hover {
-  color: #cbb26a;
+.FontAwesomeIcon {
+  li {
+    padding: 0 20px;
+    display: -webkit-flex;
+    display: flex;
+    height: 100%;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+    svg:hover {
+      color: #cbb26a;
+    }
+  }
 }
 
 @media (max-width: 801px) {

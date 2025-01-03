@@ -1,7 +1,7 @@
 import { Grid2 as Grid, Link, Slide } from "@mui/material";
 import Image from "next/image";
 import React from "react";
-import Style from "./page.module.css";
+import Style from "./page.module.scss";
 import selfie from "@/images/irisphoto.png";
 import dartmouthtoastmasters from "@/images/dartmouthtoastmasters.jpg";
 import MStJ from "@/images/mstj.jpeg";
@@ -28,7 +28,7 @@ const HomePage: React.FC = async () => {
 
   return (
     <>
-      <Grid container spacing={5}>
+      <Grid container spacing={5} className={Style.TopContainer}>
         <Slide direction="down" in={true} mountOnEnter unmountOnExit>
           <Grid size={{ md: 4, xs: 12 }} className={Style.Picture}>
             <Image

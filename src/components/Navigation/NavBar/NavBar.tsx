@@ -2,7 +2,7 @@ import React from "react";
 import NavigationItems from "../NavigationItems/NavigationItems";
 import SideBarDrawer from "../SideBar/SideBarDrawer/SideBarDrawer";
 
-import Style from "./NavBar.module.css";
+import Style from "./NavBar.module.scss";
 import Logo from "@/components/Logo/Logo";
 
 

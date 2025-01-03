@@ -60,13 +60,19 @@ button:disabled {
 
 .formContainer {
   align-items: center;
+  padding: 0 20px;
 }
 
 .formContainer img {
   padding-left: 10px;
   border-radius: 100%;
-  max-width: 480px;
+  max-height: fit-content;
+  width: -moz-fit-content;
   width: 100%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
 }
 
 @media (max-width: 959px) {
@@ -85,5 +91,11 @@ button:disabled {
 
   .ContactForm {
     padding: 0;
+  }
+}
+
+@media (max-width: 899px) {
+  .formContainer img {
+   display: none;
   }
 }
