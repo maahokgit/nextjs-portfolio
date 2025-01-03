@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Edward Ma, MStJ",
+  title: "Edward Ma, MStJ - A Web Developer",
   description: `Hi. I'm Edward, a web developer based in beautiful Nova Scotia, Canada.`,
 };
 
