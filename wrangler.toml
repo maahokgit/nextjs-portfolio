@@ -38,7 +38,7 @@ pages_build_output_dir = ".vercel/output/static"
 # name = "MY_DURABLE_OBJECT"
 # class_name = "MyDurableObject"
 # script_name = 'my-durable-object'
-node_compat = true
+
 # Bind a KV Namespace. Use KV as persistent storage for small key-value pairs.
 # Docs: https://developers.cloudflare.com/pages/functions/bindings/#kv-namespaces
 # KV Example:
