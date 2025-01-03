@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Style from "./NavigationItem.module.css";
+import Style from "./NavigationItem.module.scss";
 import { usePathname } from "next/navigation";
 
 interface INavigationItemProps {
