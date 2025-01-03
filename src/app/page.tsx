@@ -1,95 +1,110 @@
+import { Grid2 as Grid, Link, Slide } from "@mui/material";
 import Image from "next/image";
-import styles from "./page.module.css";
+import React from "react";
+import Style from "./page.module.css";
+import selfie from "@/images/irisphoto.png";
+import dartmouthtoastmasters from "@/images/dartmouthtoastmasters.jpg";
+import MStJ from "@/images/mstj.jpeg";
+import { options } from "@/content/Content";
+import { getData } from "@/lib/api";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 
-export default function Home() {
+const HomePage: React.FC = async () => {
+  const shortDescription = await getData().then((value: any) => {
+    return value.pageAboutmeCollection.items[0].shortDescription.json;
+  });
+
+  const professionalDescription = await getData().then((value: any) => {
+    return value.pageAboutmeCollection.items[0].professionalDescription.json;
+  });
+
+  const otherDescription = await getData().then((value: any) => {
+    return value.pageAboutmeCollection.items[0].otherDescription.json;
+  });
+
+  const footer = await getData().then((value: any) => {
+    return value.footerCollection.items[0].footer.json;
+  });
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <>
+      <Grid container spacing={5}>
+        <Slide direction="down" in={true} mountOnEnter unmountOnExit>
+          <Grid size={{ md: 4, xs: 12 }} className={Style.Picture}>
             <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
+              src={selfie}
+              alt="i need a better pic"
+              className={Style.selfie}
             />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+          </Grid>
+        </Slide>
+        <Slide direction="up" in={true} mountOnEnter unmountOnExit>
+          <Grid size={{ md: 8, xs: 12 }} className={Style.AboutMe}>
+            {shortDescription
+              ? documentToReactComponents(shortDescription, options)
+              : null}
+            {footer ? documentToReactComponents(footer, options) : null}
+          </Grid>
+        </Slide>
+      </Grid>
+      <Grid container spacing={5} className={Style.Container}>
+        <Grid size={{ md: 6, xs: 12 }} className={Style.MoreAboutMe}>
+          {professionalDescription
+            ? documentToReactComponents(professionalDescription, options)
+            : null}
+        </Grid>
+        <Grid size={{ md: 6, xs: 12 }} className={Style.Picture}>
+          <figure>
+            <Image
+              src={dartmouthtoastmasters}
+              alt="Dartmouth Toastmasters Executive"
+              className={Style.MoreAboutMePic}
+            />
+            <figcaption>
+              Dartmouth Toastmasters Executive Team, 2024-2025
+            </figcaption>
+          </figure>
+        </Grid>
+      </Grid>
+      <Grid container spacing={5} className={Style.Container}>
+        <Grid size={{ md: 6, xs: 12 }} className={Style.MoreAboutMe}>
+          {otherDescription
+            ? documentToReactComponents(otherDescription, options)
+            : null}
+        </Grid>
+        <Grid size={{ md: 6, xs: 12 }} className={Style.Picture}>
+          <figure>
+            <Image
+              src={MStJ}
+              alt="acceptance into the order of st. john"
+              className={Style.MoreAboutMePic}
+            />
+            <figcaption>
+              Acceptance to the prestigious{" "}
+              <a
+                href="https://www.gg.ca/en/honours/canadian-honours/directory-honours/order-st-john"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Order of St. John
+              </a>
+              , Priory Of Canada
+            </figcaption>
+          </figure>
+        </Grid>
+      </Grid>
+      <Grid container spacing={5} style={{ marginTop: 100, marginBottom: 50 }}>
+        <Grid size={{ xs: 12 }} style={{ textAlign: "center" }}>
+          <h4>
+            I’m always up for making new new connections and collaborations!
+          </h4>
+          <h4>
+            <Link href="/contact">Drop me a line</Link> if you’d like to chat.
+          </h4>
+        </Grid>
+      </Grid>
+    </>
   );
-}
+};
+
+export default HomePage;
