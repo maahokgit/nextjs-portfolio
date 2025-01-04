@@ -17,6 +17,50 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Edward Ma, MStJ - A Web Developer",
   description: `Hi. I'm Edward, a web developer based in beautiful Nova Scotia, Canada.`,
+  authors: [{ name: "Edward Ma, MStJ" }],
+  themeColor: "#000000",
+  icons: [
+    {
+      rel: "icon",
+      url: "/favicon-32x32.png",
+      sizes: "32x32",
+      type: "image/png",
+    },
+    {
+      rel: "icon",
+      url: "/favicon-16x16.png",
+      sizes: "16x16",
+      type: "image/png",
+    },
+    {
+      rel: "apple-touch-icon",
+      url: "/apple-touch-icon.png",
+      sizes: "180x180",
+    },
+  ],
+  alternates: { canonical: "https://www.edwardma.ca/" },
+  viewport: "width=device-width, initial-scale=1",
+  twitter: {
+    card: "summary_large_image",
+    site: "@maahokgit",
+    creator: "@maahokgit",
+    images: "/newSiteImage.png",
+    description:
+      "Hi. I'm Edward, a web developer based in beautiful Nova Scotia, Canada.",
+    title: "Edward Ma, MStJ - A Web Developer",
+  },
+  openGraph: {
+    type: "website",
+    url: "https://www.edwardma.ca/",
+    title: "Edward Ma, MStJ - A Web Developer",
+    description:
+      "Hi. I'm Edward, a web developer based in beautiful Nova Scotia, Canada.",
+    images: "/newSiteImage.png",
+    siteName: "Edward Ma, MStJ - A Web Developer",
+  },
+  other: {
+    "msapplication-TileColor": "#da532c",
+  },
 };
 
 interface IRootLayoutProps {
@@ -29,23 +73,6 @@ const RootLayout = (props: IRootLayoutProps) => {
   return (
     <html lang="en">
       <head>
-        <link
-          rel="apple-touch-icon"
-          sizes="180x180"
-          href="/apple-touch-icon.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="32x32"
-          href="/favicon-32x32.png"
-        />
-        <link
-          rel="icon"
-          type="image/png"
-          sizes="16x16"
-          href="/favicon-16x16.png"
-        />
         <link rel="stylesheet" href="https://use.typekit.net/qjg3agw.css" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" />
