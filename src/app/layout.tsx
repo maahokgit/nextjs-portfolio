@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.scss";
 import Navigation from "@/components/Navigation/Navigation";
 import Footer from "@/components/Footer/Footer";
@@ -68,6 +69,7 @@ const RootLayout = (props: IRootLayoutProps) => {
           href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap"
           rel="stylesheet"
         />
+        <GoogleAnalytics gaId="G-EZWPN7NV34" />
       </head>
       <body>
         <Navigation />
