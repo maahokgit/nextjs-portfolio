@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.scss";
 import Navigation from "@/components/Navigation/Navigation";
 import Footer from "@/components/Footer/Footer";
+import Main from "@/components/Main/Main";
 
 export const metadata: Metadata = {
   title: "Edward Ma, MStJ - A Web Developer",
@@ -57,8 +58,6 @@ interface IRootLayoutProps {
 }
 
 const RootLayout = (props: IRootLayoutProps) => {
-  const { children } = props;
-
   return (
     <html lang="en">
       <head>
@@ -72,7 +71,8 @@ const RootLayout = (props: IRootLayoutProps) => {
       </head>
       <body>
         <Navigation />
-        <main>{children}</main>
+        {/* <main>{children}</main> */}
+        <Main {...props} />
         <Footer />
       </body>
     </html>

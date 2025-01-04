@@ -11,11 +11,8 @@ import {
   Button,
   Grid2 as Grid,
   Slide,
-  ThemeProvider,
-  useTheme,
 } from "@mui/material";
 import Image from "next/image";
-import { customTheme } from "@/lib/customTheme";
 
 const ContactPage = () => {
   const [validateEmail, setValidateEmail] = useState(false);
@@ -34,8 +31,6 @@ const ContactPage = () => {
       setMessage("Please enter a valid email");
     }
   };
-
-  const outerTheme = useTheme();
 
   const sendEmail = (e: any) => {
     setSending(true);
@@ -63,7 +58,7 @@ const ContactPage = () => {
   };
 
   const formInput = (
-    <ThemeProvider theme={customTheme(outerTheme)}>
+    <>
       <TextField
         id="standard-basic"
         label="Your Name"
@@ -99,7 +94,7 @@ const ContactPage = () => {
       >
         Submit
       </Button>
-    </ThemeProvider>
+    </>
   );
 
   return (
@@ -121,7 +116,7 @@ const ContactPage = () => {
             ) : formSuccess ? (
               <h3>
                 Message Sent! Thank you! <br /> <br />I will get back to you as
-                soon as I see it!
+                soon as I can!
               </h3>
             ) : (
               formInput
