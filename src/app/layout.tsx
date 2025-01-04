@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     site: "@maahokgit",
     creator: "@maahokgit",
-    images: "/newSiteImage.png",
+    images: "https://dev.edwardma.ca/newSiteImage.png",
     description:
       "Hi. I'm Edward, a web developer based in beautiful Nova Scotia, Canada.",
     title: "Edward Ma, MStJ - A Web Developer",
@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     title: "Edward Ma, MStJ - A Web Developer",
     description:
       "Hi. I'm Edward, a web developer based in beautiful Nova Scotia, Canada.",
-    images: "/newSiteImage.png",
+    images: "https://dev.edwardma.ca/newSiteImage.png",
     siteName: "Edward Ma, MStJ - A Web Developer",
   },
   other: {
