@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import "./globals.scss";
 import Navigation from "@/components/Navigation/Navigation";
@@ -9,7 +9,6 @@ export const metadata: Metadata = {
   title: "Edward Ma, MStJ - A Web Developer",
   description: `Hi. I'm Edward, a web developer based in beautiful Nova Scotia, Canada.`,
   authors: [{ name: "Edward Ma, MStJ" }],
-  themeColor: "#000000",
   icons: [
     {
       rel: "icon",
@@ -52,6 +51,10 @@ export const metadata: Metadata = {
   other: {
     "msapplication-TileColor": "#da532c",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#000000",
 };
 
 interface IRootLayoutProps {
