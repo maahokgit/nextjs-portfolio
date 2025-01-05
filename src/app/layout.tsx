@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.scss";
 import Navigation from "@/components/Navigation/Navigation";
 import Footer from "@/components/Footer/Footer";
@@ -8,7 +8,6 @@ export const metadata: Metadata = {
   title: "Edward Ma, MStJ - A Web Developer",
   description: `Hi. I'm Edward, a web developer based in beautiful Nova Scotia, Canada.`,
   authors: [{ name: "Edward Ma, MStJ" }],
-  themeColor: "#000000",
   icons: [
     {
       rel: "icon",
@@ -51,6 +50,10 @@ export const metadata: Metadata = {
   other: {
     "msapplication-TileColor": "#da532c",
   },
+};
+
+export const viewport: Viewport = {
+  themeColor: "#000000",
 };
 
 interface IRootLayoutProps {
