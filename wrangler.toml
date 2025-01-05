@@ -17,11 +17,11 @@ pages_build_output_dir = ".vercel/output/static"
 # Note: Use secrets to store sensitive data.
 # - https://developers.cloudflare.com/pages/functions/bindings/#secrets
 [vars]
-NEXT_PUBLIC_EMAILJS_SERVICE_ID = 'service_hc04i1w'
-NEXT_PUBLIC_EMAILJS_TEMPLATE_ID = 'template_zhjpluj'
-NEXT_PUBLIC_EMAILJS_USER_ID = 'user_MceZzD95BQypnbSgcsBR0'
-NEXT_PUBLIC_CONTENTFUL_SPACE = gjdv2fzatqr8
-NEXT_PUBLIC_CONTENTFUL_DELIVERY_API = RrbW4k9HimZUM_T6dwm_mu4FCoVaccYoBCBLWLpZMcE
+NEXT_PUBLIC_EMAILJS_SERVICE_ID = "service_hc04i1w"
+NEXT_PUBLIC_EMAILJS_TEMPLATE_ID = "template_zhjpluj"
+NEXT_PUBLIC_EMAILJS_USER_ID = "user_MceZzD95BQypnbSgcsBR0"
+NEXT_PUBLIC_CONTENTFUL_SPACE = "gjdv2fzatqr8"
+NEXT_PUBLIC_CONTENTFUL_DELIVERY_API = "RrbW4k9HimZUM_T6dwm_mu4FCoVaccYoBCBLWLpZMcE"
 
 # Bind the Workers AI model catalog. Run machine learning models, powered by serverless GPUs, on Cloudflare’s global network
 # Docs: https://developers.cloudflare.com/pages/functions/bindings/#workers-ai
