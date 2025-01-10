@@ -9,6 +9,12 @@
     color: white;
     font-size: medium;
     word-spacing: 5px;
+    svg {
+      box-sizing: content-box;
+      height: 1em;
+      overflow: visible;
+      vertical-align: -0.125em;
+    }
   }
 }
 

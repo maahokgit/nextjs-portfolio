@@ -1,0 +1,165 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex-direction: column;
+  .hello {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .link {
+    text-align: center;
+    height: 20px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+.mobile {
+  display: none;
+}
+
+.mobileLink {
+  display: none;
+}
+
+.svg {
+  width: 640px;
+  height: 119px;
+  text {
+    font-size: 50px;
+    &.Text {
+      font-family: "ysans-std-mondrian", sans-serif;
+      animation: stroke 4s;
+      animation-fill-mode: forwards;
+      stroke-width: 1;
+      stroke: #365fa0;
+      font-size: 100px;
+    }
+  }
+}
+
+.fadeIn {
+  animation: 2s fadeIn;
+  visibility: hidden;
+  animation-fill-mode: forwards;
+  margin: unset;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes stroke {
+  0% {
+    fill: transparent;
+    stroke: #cbb26a;
+    stroke-dashoffset: 25%;
+    stroke-dasharray: 0 25%;
+    stroke-width: 2;
+  }
+
+  70% {
+    fill: transparent;
+    stroke: #cbb26a;
+    stroke-width: 2;
+  }
+
+  80% {
+    fill: transparent;
+    stroke: #cbb26a;
+    stroke-width: 2;
+  }
+
+  to {
+    fill: #cbb26a;
+    stroke: #edf5fd;
+    stroke-dashoffset: -25%;
+    stroke-dasharray: 25% 0;
+    stroke-width: 0;
+  }
+}
+
+.navList {
+  margin: 0;
+  align-items: center;
+  height: 100%;
+  flex-flow: row;
+  list-style: none;
+  display: flex;
+  padding: 0;
+  .Items {
+    padding: 0 20px;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    a {
+      font-family: "Mulish";
+      font-weight: 800;
+      font-size: 20px;
+      width: 130px;
+      text-decoration: none;
+      text-align: center;
+      height: 25px;
+      &.active,
+      &:hover {
+        color: white !important;
+        border-bottom: 1px solid #cbb26a;
+      }
+    }
+  }
+}
+
+@media (max-width: 1243px) {
+  .container .hello {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 645px) {
+  .svg {
+    display: none;
+  }
+
+  .mobile {
+    display: block;
+    font-family: ysans-std-mondrian, sans-serif;
+    font-size: 50px;
+    color: #cbb26a;
+    height: 52px;
+  }
+
+  .link {
+    display: none !important;
+  }
+
+  .mobileLink {
+    display: block;
+    height: 105px;
+  }
+
+  .navList {
+    flex-direction: column;
+    .Items {
+      padding: 5px 0;
+    }
+  }
+}
+
+@media (max-width: 550px) {
+  .hello {
+    height: 120px;
+  }
+
+
+}

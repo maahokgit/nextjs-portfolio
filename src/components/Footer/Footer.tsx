@@ -3,7 +3,6 @@ import { faCopyright } from "@fortawesome/free-solid-svg-icons";
 import Style from "./Footer.module.scss";
 
 const Footer = async () => {
-
   return (
     <footer className={Style.Footer}>
       <p>

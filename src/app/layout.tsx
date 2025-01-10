@@ -1,8 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.scss";
-import Navigation from "@/components/Navigation/Navigation";
-import Footer from "@/components/Footer/Footer";
-import Main from "@/components/Main/Main";
 
 export const metadata: Metadata = {
   title: "Edward Ma, MStJ - A Web Developer",
@@ -28,7 +25,6 @@ export const metadata: Metadata = {
     },
   ],
   alternates: { canonical: "https://www.edwardma.ca/" },
-  viewport: "width=device-width, initial-scale=1",
   twitter: {
     card: "summary_large_image",
     site: "@maahokgit",
@@ -54,6 +50,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: "#000000",
+  width: "width=device-width",
+  initialScale: 1,
 };
 
 interface IRootLayoutProps {
@@ -72,11 +70,7 @@ const RootLayout = (props: IRootLayoutProps) => {
           rel="stylesheet"
         />
       </head>
-      <body>
-        <Navigation />
-        <Main {...props} />
-        <Footer />
-      </body>
+      <body>{props.children}</body>
     </html>
   );
 };

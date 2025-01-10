@@ -41,7 +41,7 @@ li {
 main {
   color: white;
   max-width: 1400px;
-  margin: 150px auto 0 auto;
+  margin: 0 auto 0 auto;
   flex: 1;
 }
 
@@ -50,6 +50,8 @@ main {
     padding: 20px;
   }
 }
+
+
 @media (max-width: 800px) {
   main {
     margin-top: 70px;
