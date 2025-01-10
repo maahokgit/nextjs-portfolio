@@ -1,6 +1,12 @@
 .displayText {
-  font-family: "ysans-std-mondrian", sans-serif;
+  font-family: ysans-std-mondrian, sans-serif;
   font-size: 100px;
+  margin: unset;
+  height: 98px;
+  justify-content: center;
+  justify-items: center;
+  vertical-align: middle;
+  display: flex;
 }
 @media (max-width: 1243px) {
   .displayText {
@@ -10,8 +16,16 @@
   }
 }
 
-@media (max-width: 645px) {
+@media (max-width: 680px) {
+  .displayText {
+    font-size: 80px;
+    height: fit-content;
+  }
+}
+
+@media (max-width: 550px) {
   .displayText {
     font-size: 50px;
+    height: fit-content;
   }
 }

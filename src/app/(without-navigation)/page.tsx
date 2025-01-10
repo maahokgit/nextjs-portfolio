@@ -7,12 +7,10 @@ import Link from "next/link";
 const HomePage: React.FC = () => {
   const [showName, setShowName] = useState(false);
   const [showLinks, setShowLinks] = useState(false);
-  const [mobileFade, setMobileFade] = useState(false);
 
   useEffect(() => {
     const delayName = setTimeout(() => {
       setShowName(true);
-      setMobileFade(true);
     }, 1500);
 
     const delayRoles = setTimeout(() => {
@@ -27,7 +25,7 @@ const HomePage: React.FC = () => {
 
   const ShowName = showName ? (
     <svg className={Style.svg} textAnchor="middle">
-      <text x="325" y="84" className={Style.Text}>
+      <text x="50%" y="50%" dy=".35em" className={Style.Text}>
         Edward Ma
       </text>
     </svg>
@@ -56,13 +54,9 @@ const HomePage: React.FC = () => {
       <div className={Style.hello}>
         <Typewriter text={`Hello, I am`} speed={100} />
         {ShowName}
-        <div className={Style.mobile}>
-          {mobileFade ? <div className={Style.fadeIn}>Edward Ma</div> : null}
-        </div>
       </div>
 
       <div className={Style.link}>{showLinks ? links : null}</div>
-      <div className={Style.mobileLink}>{mobileFade ? links : null}</div>
     </div>
   );
 };
