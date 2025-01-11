@@ -10,12 +10,29 @@
   align-items: center;
   height: 100%;
   flex-flow: row;
+  li {
+    padding-right: 25px;
+  }
 }
 
-a.Icon:hover,
-a.Icon:focus,
-a.Icon:active {
-  border-bottom: none;
+a.Icon {
+  :hover,
+  :focus,
+  :active {
+    border-bottom: none;
+    &::after {
+      transform-origin: unset;
+    }
+  }
+  &::after {
+    height: 0px;
+    transition: none;
+    transform-origin: none;
+  }
+}
+
+.noPadding {
+  padding-right: 0px !important;
 }
 
 .FontAwesomeIcon {

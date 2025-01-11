@@ -1,23 +1,16 @@
 import React from "react";
 import NavigationItems from "../NavigationItems/NavigationItems";
-import SideBarDrawer from "../SideBar/SideBarDrawer/SideBarDrawer";
+import BottomNavBar from "../BottomNavBar/BottomNavBar";
 
 import Style from "./NavBar.module.scss";
-import Logo from "@/components/Logo/Logo";
 
-
-interface INavBarProps {
-  sideBarToggleClicked: () => void;
-}
-
-const NavBar = (props: INavBarProps) => (
+const NavBar = () => (
   <header className={Style.NavBar}>
     <div className={Style.div}>
-      <Logo />
       <nav className={Style.DeskTopOnly}>
         <NavigationItems />
       </nav>
-      <SideBarDrawer clicked={props.sideBarToggleClicked} />
+      <BottomNavBar />
     </div>
   </header>
 );

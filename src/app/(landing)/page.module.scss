@@ -16,41 +16,22 @@
     display: block;
     margin: 20px auto;
 
-    .navList {
-      margin: 0;
-      align-items: center;
-      height: 100%;
-      flex-flow: row;
-      list-style: none;
-      display: flex;
-      padding: 0;
-
-      .Items {
-        padding-left: 20px;
-        padding-right: 20pxF;
-        display: flex;
-        height: 100%;
-        align-items: center;
-        justify-content: center;
-
-        a {
-          font-family: "Mulish";
-          font-weight: 800;
-          font-size: 20px;
-          width: 130px;
-          text-decoration: none;
-          text-align: center;
-          height: 25px;
-          &.active,
-          &:hover {
-            color: white !important;
-            border-bottom: 1px solid #cbb26a;
-          }
+    a {
+      font-family: "Mulish";
+      font-weight: 800;
+      font-size: 20px;
+      width: 130px;
+      text-decoration: none;
+      text-align: center;
+      height: 25px;
+      &:hover {
+        color: #fff !important;
+        text-decoration: none !important;
+        border-bottom: 1px solid #cbb26a;
         }
       }
     }
   }
-}
 
 .svg {
   width: 640px;

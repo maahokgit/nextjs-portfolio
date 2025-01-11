@@ -1,5 +1,5 @@
-import Footer from "@/components/Footer/Footer";
 import Style from "./layout.module.scss";
+import Navigation from "@/components/Navigation/Navigation";
 
 interface ILayoutProps {
   children: React.ReactNode;
@@ -8,8 +8,9 @@ interface ILayoutProps {
 const Layout = (props: ILayoutProps) => {
   return (
     <>
+      <Navigation />
       <main className={Style.main}>{props.children}</main>
-      <Footer />
+      {/* <Footer /> */}
     </>
   );
 };

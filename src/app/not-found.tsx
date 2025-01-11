@@ -1,4 +1,3 @@
-import Footer from "@/components/Footer/Footer";
 import Styles from "./not-found.module.scss";
 import Navigation from "@/components/Navigation/Navigation";
 import Main from "@/components/Main/Main";
@@ -17,7 +16,6 @@ const NotFound: React.FC = () => {
           </div>
         </div>
       </Main>
-      <Footer />
     </>
   );
 };

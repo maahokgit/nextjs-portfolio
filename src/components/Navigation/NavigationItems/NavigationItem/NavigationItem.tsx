@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link";
 import Style from "./NavigationItem.module.scss";
 import { usePathname } from "next/navigation";
@@ -12,11 +13,9 @@ const NavigationItem = (props: INavigationItemProps) => {
   const className = currentPath === props.link ? Style.active : "";
 
   return (
-    <li className={Style.Items}>
-      <Link href={props.link} className={className}>
-        {props.children}
-      </Link>
-    </li>
+    <Link href={props.link} className={[Style.Items, className].join(" ")}>
+      {props.children}
+    </Link>
   );
 };
 

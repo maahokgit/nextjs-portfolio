@@ -7,25 +7,45 @@ import Style from "./NavigationItems.module.scss";
 
 const NavigationItems = () => (
   <ul className={Style.NavigationItems}>
-    <NavigationItem link="/">About</NavigationItem>
-    <NavigationItem link="/contact">Contact</NavigationItem>
-    <ul className={Style.FontAwesomeIcon}>
-      <li>
-        <a
-          href="https://www.linkedin.com/in/maahokgit"
-          target="_blank"
-          rel="noreferrer"
-          className={Style.Icon}
-        >
-          <FontAwesomeIcon icon={faLinkedinIn} size="lg" color="white" />
-        </a>
-      </li>
-      <li>
-        <a href="https://github.com/maahokgit" target="_blank" rel="noreferrer" className={Style.Icon}>
-          <FontAwesomeIcon icon={faGithub} size="lg" color="white" />
-        </a>
-      </li>
-    </ul>
+    <li>
+      <NavigationItem link="/">Home</NavigationItem>
+    </li>
+    <li>
+      <NavigationItem link="/about">About Me</NavigationItem>
+    </li>
+    <li>
+      <NavigationItem link="/work">My Work</NavigationItem>
+    </li>
+    <li>
+      <NavigationItem link="/contact">Contact Me</NavigationItem>
+    </li>
+
+    <li className={Style.noPadding}>
+      <ul className={Style.FontAwesomeIcon}>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/maahokgit"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={Style.Icon}
+            title="LinkedIn Profile"
+          >
+            <FontAwesomeIcon icon={faLinkedinIn} size="lg" color="white" />
+          </a>
+        </li>
+        <li className={Style.noPadding}>
+          <a
+            href="https://github.com/maahokgit"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={Style.Icon}
+            title="GitHub Profile"
+          >
+            <FontAwesomeIcon icon={faGithub} size="lg" color="white" />
+          </a>
+        </li>
+      </ul>
+    </li>
   </ul>
 );
 

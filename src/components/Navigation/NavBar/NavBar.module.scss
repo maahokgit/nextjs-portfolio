@@ -8,22 +8,16 @@
   width: 100%;
   z-index: 999;
   background-color: rgb(0, 0, 0, 0.8);
-
-  nav {
-    height: 100%;
-    margin: auto 0 auto auto;
+  .div {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    nav {
+      height: 100%;
+      margin: 0 auto;
+    }
   }
-
-  .onScroll {
-    background-color: white;
-  }
-}
-
-.div {
-  max-width: 1400px;
-  width: 100%;
-  margin: 0 auto;
-  display: flex;
 }
 
 @media (max-width: 801px) {
@@ -32,7 +26,10 @@
   }
 
   .NavBar {
-    position: static;
+    top: unset;
+    bottom: 0;
+    border-top: solid 1px #cbb26a;
+    padding: 40px 0px;
   }
 }
 
