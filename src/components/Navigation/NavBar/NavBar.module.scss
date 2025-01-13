@@ -7,7 +7,8 @@
   top: 0;
   width: 100%;
   z-index: 999;
-  background-color: rgb(0, 0, 0, 0.8);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   .div {
     max-width: 1400px;
     width: 100%;
@@ -20,16 +21,25 @@
   }
 }
 
-@media (max-width: 801px) {
+.MobileOnly {
+  display: none;
+}
+
+@media (max-width: 635px) {
   .DeskTopOnly {
     display: none;
+  }
+
+  .MobileOnly {
+    display: inline-block;
   }
 
   .NavBar {
     top: unset;
     bottom: 0;
-    border-top: solid 1px #cbb26a;
-    padding: 40px 0px;
+    -webkit-backdrop-filter: unset;
+    backdrop-filter: unset;
+    width: auto;
   }
 }
 

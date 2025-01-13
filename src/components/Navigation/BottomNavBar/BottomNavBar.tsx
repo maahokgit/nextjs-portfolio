@@ -1,84 +1,95 @@
 "use client";
+import { useState } from "react";
+import Style from "./BottomNavBar.module.scss";
+import { Link, Zoom } from "@mui/material";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faBriefcase,
-  faCircleUser,
   faEnvelope,
-  faHouse,
+  faHome,
+  faPersonCircleQuestion,
+  faX,
 } from "@fortawesome/free-solid-svg-icons";
-import Style from "./BottomNavBar.module.scss";
-import { faLinkedinIn, faGithub } from "@fortawesome/free-brands-svg-icons";
-import Link from "next/link";
-import { Tooltip } from "@mui/material";
 import { usePathname } from "next/navigation";
 
 const BottomNavBar = () => {
+  const [isOpen, SetIsOpen] = useState<boolean>(false);
   const currentPath = usePathname();
 
+  const handleChange = () => {
+    SetIsOpen((prev) => !prev);
+  };
+
+  const menuClass = [Style.bubble_out_menu, Style.dropdown].join(" ");
+  const toggle = [Style.bubble_out_toggle, Style.dropdown_toggle];
+  const nav = [Style.bubble_out_list, Style.dropdown_list];
+
+  if (isOpen) {
+    toggle.push(Style.open);
+    nav.push(Style.open);
+  }
+
+  const homeLink = [Style.link, Style.dropdown_link];
+  const aboutLink = [Style._2, Style.link, Style.dropdown_link];
+  const workLink = [Style._3, Style.link, Style.dropdown_link];
+  const contactLink = [Style._4, Style.link, Style.dropdown_link];
+
+  if (currentPath === "/") {
+    homeLink.push(Style.active);
+  }
+
+  if (currentPath === "/about") {
+    aboutLink.push(Style.active);
+  }
+
+  if (currentPath === "/work") {
+    workLink.push(Style.active);
+  }
+
+  if (currentPath === "/contact") {
+    contactLink.push(Style.active);
+  }
+
+  const toggleClass = toggle.join(" ");
+  const navClass = nav.join(" ");
+
   return (
-    <ul className={Style.DrawerToggle}>
-      <li className={Style.BottomLink}>
-        <Tooltip title="Home" placement="top">
-          <Link href="/" className={currentPath === "/" ? Style.active : ""}>
-            <FontAwesomeIcon icon={faHouse} color="white" />
+    <div className={menuClass}>
+      <div className={toggleClass} onClick={handleChange}>
+        <div className={Style.bubble_out_title}>Menu</div>
+        <div className={Style.close}>
+          <FontAwesomeIcon icon={faX} size="lg" />
+        </div>
+      </div>
+      <div className={navClass}>
+        <Zoom in={isOpen} style={{ transitionDelay: isOpen ? "0ms" : "0ms" }}>
+          <Link className={homeLink.join(" ")} href="/">
+            <FontAwesomeIcon icon={faHome} onClick={handleChange} />
           </Link>
-        </Tooltip>
-      </li>
-      <li className={Style.BottomLink}>
-        <Tooltip title="About Me" placement="top">
-          <Link
-            href="/about"
-            className={currentPath === "/about" ? Style.active : ""}
-          >
-            <FontAwesomeIcon icon={faCircleUser} color="white" />
+        </Zoom>
+
+        <Zoom in={isOpen} style={{ transitionDelay: isOpen ? "200ms" : "0ms" }}>
+          <Link className={aboutLink.join(" ")} href="/about">
+            <FontAwesomeIcon
+              icon={faPersonCircleQuestion}
+              onClick={handleChange}
+            />
           </Link>
-        </Tooltip>
-      </li>
-      <li className={Style.BottomLink}>
-        <Tooltip title="My Work" placement="top">
-          <Link
-            href="/work"
-            className={currentPath === "/work" ? Style.active : ""}
-          >
-            <FontAwesomeIcon icon={faBriefcase} color="white" />
+        </Zoom>
+
+        <Zoom in={isOpen} style={{ transitionDelay: isOpen ? "400ms" : "0ms" }}>
+          <Link className={workLink.join(" ")} href="/work">
+            <FontAwesomeIcon icon={faBriefcase} onClick={handleChange} />
           </Link>
-        </Tooltip>
-      </li>
-      <li className={Style.BottomLink}>
-        <Tooltip title="Contact Me" placement="top">
-          <Link
-            href="/contact"
-            className={currentPath === "/contact" ? Style.active : ""}
-          >
-            <FontAwesomeIcon icon={faEnvelope} color="white" />
+        </Zoom>
+
+        <Zoom in={isOpen} style={{ transitionDelay: isOpen ? "600ms" : "0ms" }}>
+          <Link className={contactLink.join(" ")} href="/contact">
+            <FontAwesomeIcon icon={faEnvelope} onClick={handleChange} />
           </Link>
-        </Tooltip>
-      </li>
-      <li className={Style.BottomLink}>
-        <Tooltip title="LinkedIn" placement="top">
-          <a
-            href="https://www.linkedin.com/in/maahokgit"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={Style.Icon}
-          >
-            <FontAwesomeIcon icon={faLinkedinIn} color="white" />
-          </a>
-        </Tooltip>
-      </li>
-      <li className={Style.BottomLink}>
-        <Tooltip title="GitHub" placement="top">
-          <a
-            href="https://github.com/maahokgit"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={Style.Icon}
-          >
-            <FontAwesomeIcon icon={faGithub} color="white" />
-          </a>
-        </Tooltip>
-      </li>
-    </ul>
+        </Zoom>
+      </div>
+    </div>
   );
 };
 

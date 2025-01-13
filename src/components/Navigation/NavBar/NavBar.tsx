@@ -10,7 +10,9 @@ const NavBar = () => (
       <nav className={Style.DeskTopOnly}>
         <NavigationItems />
       </nav>
-      <BottomNavBar />
+      <nav className={Style.MobileOnly}>
+        <BottomNavBar />
+      </nav>
     </div>
   </header>
 );

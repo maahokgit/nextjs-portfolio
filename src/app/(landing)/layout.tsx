@@ -10,7 +10,6 @@ const Layout = (props: ILayoutProps) => {
     <>
       <Navigation />
       <main className={Style.main}>{props.children}</main>
-      {/* <Footer /> */}
     </>
   );
 };

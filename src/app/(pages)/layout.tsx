@@ -5,7 +5,7 @@ interface IRootLayoutProps {
   children: React.ReactNode;
 }
 
-const RootLayout = (props: IRootLayoutProps) => {
+const Layout = (props: IRootLayoutProps) => {
   return (
     <>
       <Navigation />
@@ -14,4 +14,4 @@ const RootLayout = (props: IRootLayoutProps) => {
   );
 };
 
-export default RootLayout;
+export default Layout;
