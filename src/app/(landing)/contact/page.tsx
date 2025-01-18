@@ -1,24 +1,21 @@
 "use client";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
-import headshot from "@/images/headshot.png";
 import Style from "./page.module.css";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Spinner from "@/components/Spinner/Spinner";
-import {
-  TextField,
-  Button,
-  Grid2 as Grid,
-  Slide,
-} from "@mui/material";
-import Image from "next/image";
+import { TextField, Button } from "@mui/material";
+import { customTheme } from "@/lib/customTheme";
+import { ThemeProvider, useTheme } from "@mui/material";
 
 const ContactPage = () => {
   const [validateEmail, setValidateEmail] = useState(false);
   const [message, setMessage] = useState("");
   const [formSuccess, setFormSuccess] = useState(false);
   const [sending, setSending] = useState(false);
+
+  const outerTheme = useTheme();
 
   const validateEmailHandler = (event: any) => {
     const emailReg =
@@ -59,6 +56,8 @@ const ContactPage = () => {
 
   const formInput = (
     <>
+      <h4>I’m always up for making new new connections and collaborations!</h4>
+      <h4>Drop me a line if you’d like to chat.</h4>
       <TextField
         id="standard-basic"
         label="Your Name"
@@ -98,33 +97,20 @@ const ContactPage = () => {
   );
 
   return (
-    <Grid container spacing={5} className={Style.formContainer}>
-      <Slide direction="right" in={true} mountOnEnter unmountOnExit>
-        <Grid size={{ md: 5, xs: 12 }}>
-          <Image src={headshot} alt="headshot" width={480} height={626} />
-        </Grid>
-      </Slide>
-      <Slide direction="left" in={true} mountOnEnter unmountOnExit>
-        <Grid size={{ md: 7, xs: 12 }}>
-          <h4>
-            I’m always up for making new new connections and collaborations!
-          </h4>
-          <h4>Drop me a line if you’d like to chat.</h4>
-          <form className={Style.ContactForm} onSubmit={sendEmail}>
-            {sending ? (
-              <Spinner />
-            ) : formSuccess ? (
-              <h3>
-                Message Sent! Thank you! <br /> <br />I will get back to you as
-                soon as I can!
-              </h3>
-            ) : (
-              formInput
-            )}
-          </form>
-        </Grid>
-      </Slide>
-    </Grid>
+    <ThemeProvider theme={customTheme(outerTheme)}>
+      <form className={Style.ContactForm} onSubmit={sendEmail}>
+        {sending ? (
+          <Spinner />
+        ) : formSuccess ? (
+          <h3 className={Style.h3}>
+            Message Sent!
+            <br /> <br />I will get back to you as soon as I can!
+          </h3>
+        ) : (
+          formInput
+        )}
+      </form>
+    </ThemeProvider>
   );
 };
 

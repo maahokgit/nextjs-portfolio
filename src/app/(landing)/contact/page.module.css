@@ -1,0 +1,38 @@
+.ContactForm {
+  display: flex;
+  flex-flow: column;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.ContactForm span,
+.ContactForm label {
+  text-align: left;
+}
+
+.ContactForm span {
+  color: black;
+}
+
+.ContactForm label {
+  padding: 10px 0;
+  font-weight: bold;
+  color: white;
+}
+
+.button {
+  background-color: #cbb26a !important;
+  width: fit-content;
+  margin: 15px auto !important;
+}
+
+.formContainer {
+  align-items: center;
+  padding: 0 20px;
+  margin-top: 150px;
+
+  .h3 {
+    text-align: center;
+    color: #cbb26a;
+  }
+}
