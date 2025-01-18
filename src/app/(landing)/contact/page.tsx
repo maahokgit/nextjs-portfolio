@@ -1,7 +1,7 @@
 "use client";
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
-import Style from "./page.module.css";
+import Style from "./page.module.scss";
 import { faPaperPlane } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Spinner from "@/components/Spinner/Spinner";
@@ -102,7 +102,7 @@ const ContactPage = () => {
         {sending ? (
           <Spinner />
         ) : formSuccess ? (
-          <h3 className={Style.h3}>
+          <h3>
             Message Sent!
             <br /> <br />I will get back to you as soon as I can!
           </h3>
